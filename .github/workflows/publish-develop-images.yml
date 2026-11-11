@@ -1,0 +1,39 @@
+name: Build and publish container images for the 'develop' branch
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  build-and-push-images:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      -   name: Checkout repository
+          uses: actions/checkout@v6
+      -   name: Build Overleaf V6 containers
+          run: cd server-ce && make build-base build-community
+      -   name: Build Sandboxed Compiler containers
+          run: cd sandboxed-compiler && make
+      -   name: Log in to registry
+          run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      -   name: Push images
+          run: |
+            VERSION=develop
+            
+            IMAGE_ID=ghcr.io/daniel-wwu-it/overleaf-base
+            docker tag docker.io/sharelatex/sharelatex-base:$VERSION $IMAGE_ID:$VERSION
+            docker push $IMAGE_ID:$VERSION
+            
+            IMAGE_ID=ghcr.io/daniel-wwu-it/overleaf
+            docker tag docker.io/sharelatex/sharelatex:$VERSION $IMAGE_ID:$VERSION
+            docker push $IMAGE_ID:$VERSION
+            
+            IMAGE_ID=ghcr.io/daniel-wwu-it/overleaf-compiler-host
+            docker tag docker.io/sharelatex/sharelatex-compiler-host:$VERSION $IMAGE_ID:$VERSION
+            docker push $IMAGE_ID:$VERSION
+            
+            IMAGE_ID=ghcr.io/daniel-wwu-it/overleaf-compiler
+            docker tag docker.io/sharelatex/sharelatex-compiler:$VERSION $IMAGE_ID:$VERSION
+            docker push $IMAGE_ID:$VERSION
