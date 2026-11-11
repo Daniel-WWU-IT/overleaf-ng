@@ -6,6 +6,11 @@
 ARG OVERLEAF_BASE_TAG=sharelatex/sharelatex-base:latest
 FROM $OVERLEAF_BASE_TAG
 
+# Install additional Python modules
+# -----------------------------------
+RUN apt-get update \
+&&  apt-get install -y python3-flask python3-requests python3-cryptography python3-bs4 python3-lxml python3-gunicorn
+
 WORKDIR /overleaf
 
 # Add required source files for yarn install
@@ -87,6 +92,18 @@ COPY server-ce/config/custom-environment-variables.json /overleaf/services/histo
 # -----------------------
 ADD server-ce/bin/grunt /usr/local/bin/grunt
 RUN chmod +x /usr/local/bin/grunt
+
+# Copy UI proxy scripts and stylesheets
+# -------------------------------------
+COPY server-ce/runit/ui-proxy/js/*.js /overleaf/services/web/public/js/ui-proxy/
+COPY server-ce/runit/ui-proxy/css/*.css /overleaf/services/web/public/stylesheets/ui-proxy/
+
+# Copy the sandboxed compiler runner
+# ----------------------------------
+COPY sandboxed-compiler/compiler-runner/compiler_runner.py /usr/local/bin/latexmk
+RUN chmod +x /usr/local/bin/latexmk
+COPY sandboxed-compiler/compiler-runner/texcount.pl /usr/local/bin/texcount
+RUN chmod +x /usr/local/bin/texcount
 
 # Copy history helper scripts
 # ---------------------------
