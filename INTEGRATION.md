@@ -3,7 +3,7 @@
 ## Overleaf base
 The following commit has been used as the base for the Overleaf integration:
 ```
-e039ad26c5bf5422eb57b89fc7e57c75055e631d
+ae07e781ab20dac2378420e5cf7a47f7d8bccbb5
 ```
 
 ## Changes applied to Overleaf
