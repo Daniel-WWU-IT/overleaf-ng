@@ -141,6 +141,9 @@ ENV OVERLEAF_RESTRICT_INVITES_TO_EXISTING_ACCOUNTS="true"
 ENV OVERLEAF_DISABLE_LINK_SHARING="true"
 ENV EMAIL_CONFIRMATION_DISABLED="true"
 
+ENV OVERLEAF_HISTORY_RESTORE="true"
+ENV OVERLEAF_ENABLE_REGISTRATION_PAGE="false"
+ENV SIBLING_CONTAINERS_ENABLED="false"
 
 # Phusion Image timeouts before sending SIGKILL to processes
 # ----------------------------------------------------------
