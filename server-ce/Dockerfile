@@ -134,6 +134,14 @@ ENV OPTIMISE_PDF="true"
 
 ENV REQ_VALIDATION_MODE=enforce-log
 
+# Overleaf V6 NG specifics
+ENV OVERLEAF_CSP_ENABLED="false"
+
+ENV OVERLEAF_RESTRICT_INVITES_TO_EXISTING_ACCOUNTS="true"
+ENV OVERLEAF_DISABLE_LINK_SHARING="true"
+ENV EMAIL_CONFIRMATION_DISABLED="true"
+
+
 # Phusion Image timeouts before sending SIGKILL to processes
 # ----------------------------------------------------------
 ENV KILL_PROCESS_TIMEOUT=55
