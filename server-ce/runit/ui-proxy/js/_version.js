@@ -1,2 +1,2 @@
 const OVERLEAF_VERSION = "6.3.0"
-const INTEGRATION_VERSION = "2.3.0"
+const INTEGRATION_VERSION = "3.0.0-beta"
