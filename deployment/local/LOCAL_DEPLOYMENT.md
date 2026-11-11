@@ -57,7 +57,7 @@ It's advisable to make sure that the settings have been saved by reloading the p
 
 ## Running a local deployment
 
-The provided `makefile` in the project root directory can be used to build local container images and boot up a local deployment; simply run `make` without any target. This will also start a Nextcloud instance, which runs on `https://nextcloud.dev.local`. The default administrator login is `admin/admin`.
+The provided `Makefile` in the project root directory can be used to build local container images and boot up a local deployment; simply run `make` without any target. This will also start a Nextcloud instance, which runs on `https://nextcloud.dev.local`. The default administrator login is `admin/admin`.
 
 To stop the entire deployment, simply press `d` to detach in the console; this will automatically stop all containers.
 
