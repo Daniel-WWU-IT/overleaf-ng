@@ -91,9 +91,16 @@ def create_user(client):
     _error(client, 'Email address missing', 400)
   password = ''.join(random.choices(string.ascii_letters + string.digits, k=32))  # We just generate a random password
 
-  _debug_print(f'Creating user: {email}, password: {password}')
+  if is_admin := os.getenv('DEPLOYMENT_MODE').casefold() == 'local':
+    _debug_print(f'Creating admin: {email}, password: {password}')
+  else:
+    _debug_print(f'Creating user: {email}, password: {password}')
 
-  result = subprocess.run(['node', 'modules/server-ce-scripts/scripts/create-user.mjs', '--email=' + email],
+  params = ['node', 'modules/server-ce-scripts/scripts/create-user.mjs']
+  if is_admin:
+    params.append('--admin')
+  params.append('--email=' + email)
+  result = subprocess.run(params,
                           user='www-data',
                           cwd='/overleaf/services/web',
                           universal_newlines=True,
@@ -106,7 +113,7 @@ def create_user(client):
 
   try:
     output = str(result.stdout)
-    regex = r".*Successfully created .* as a user.*(^\s*http.*\s*$).*"
+    regex = r".*Successfully created .* as [a user|an admin user].*(^\s*http.*\s*$).*"
     matches = re.finditer(regex, output, re.MULTILINE | re.DOTALL)
     link = next(matches).group(1).strip()
 
