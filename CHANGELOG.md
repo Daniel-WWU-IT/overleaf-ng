@@ -2,12 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v3.0.0] - xxxx-xx-xx
+## v3.0.0 - xxxx-xx-xx
 
 ### Changed
 - Based the project on [Overleaf CEP](https://github.com/yu-i-i/overleaf-cep)
 
-## [V2.3.0] - 2026-10-30
+## V2.3.0 - 2026-10-30
 
 ### New
 
@@ -19,12 +19,12 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Small UI modification fixes
 
-## [V2.2.0] - 2026-10-02
+## V2.2.0 - 2026-10-02
 
 ### Changed
 - Updated to Overleaf 6.3.0
 
-## [V2.1.0] - 2026-07-21
+## V2.1.0 - 2026-07-21
 
 ### Added
 - Added license (GNU Affero General Public License)
@@ -33,6 +33,7 @@ All notable changes to this project will be documented in this file.
 - Updated to Overleaf 6.2.0
 - Modernized various aspects of the app
 
-## [V2.0.0] - 2026-06-16
+## V2.0.0 - 2026-06-16
 
-Completely rewritten to work with Overleaf V6.
+### Changed
+- Completely rewritten to work with Overleaf V6
