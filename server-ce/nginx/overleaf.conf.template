@@ -10,12 +10,14 @@ server {
 	}
 
 	location / {
+	    # -- BEGIN NG --
 		if ($request_method = GET) {
 		  proxy_pass http://127.0.0.1:9000;
 		}
 		if ($request_method != GET) {
 		  proxy_pass http://127.0.0.1:4000;
 		}
+		# -- END NG --
 
 		proxy_http_version 1.1;
 		proxy_set_header Upgrade $http_upgrade;
@@ -27,6 +29,7 @@ server {
 		proxy_send_timeout 10m;
 	}
 
+    # -- BEGIN NG --
 	location /regsvc {
     proxy_pass http://127.0.0.1:8000/;
 		proxy_http_version 1.1;
@@ -38,6 +41,7 @@ server {
 		proxy_read_timeout 10m;
 		proxy_send_timeout 10m;
 	}
+	# -- END NG --
 
 	# Only the git smart-HTTP endpoints of a project (/git/<project id>[.git]/...) are
 	# public. git-bridge's other routes (/status, /health_check, /metrics, /diags,

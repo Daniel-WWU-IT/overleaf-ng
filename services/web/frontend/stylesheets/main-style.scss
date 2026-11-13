@@ -57,5 +57,7 @@
 // DS unified access styles
 @import 'ciam/all';
 
+// -- BEGIN NG --
 // Dark style overrides
-@import 'dark-style';
+@import 'dark-style.ng';
+// -- END NG --

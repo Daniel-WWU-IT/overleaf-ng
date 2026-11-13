@@ -6,10 +6,12 @@
 ARG OVERLEAF_BASE_TAG=sharelatex/sharelatex-base:latest
 FROM $OVERLEAF_BASE_TAG
 
+# -- BEGIN NG --
 # Install additional Python modules
 # -----------------------------------
 RUN apt-get update \
 &&  apt-get install -y python3-flask python3-requests python3-cryptography python3-bs4 python3-lxml python3-gunicorn
+# -- END NG --
 
 WORKDIR /overleaf
 
@@ -93,6 +95,7 @@ COPY server-ce/config/custom-environment-variables.json /overleaf/services/histo
 ADD server-ce/bin/grunt /usr/local/bin/grunt
 RUN chmod +x /usr/local/bin/grunt
 
+# -- BEGIN NG --
 # Copy UI proxy scripts and stylesheets
 # -------------------------------------
 COPY server-ce/runit/ui-proxy/js/*.js /overleaf/services/web/public/js/ui-proxy/
@@ -104,6 +107,7 @@ COPY sandboxed-compiler/compiler-runner/compiler_runner.py /usr/local/bin/latexm
 RUN chmod +x /usr/local/bin/latexmk
 COPY sandboxed-compiler/compiler-runner/texcount.pl /usr/local/bin/texcount
 RUN chmod +x /usr/local/bin/texcount
+# -- END NG --
 
 # Copy history helper scripts
 # ---------------------------
@@ -134,6 +138,7 @@ ENV OPTIMISE_PDF="true"
 
 ENV REQ_VALIDATION_MODE="enforce-log"
 
+# -- BEGIN NG --
 # Overleaf V6 NG specifics
 ENV OVERLEAF_CSP_ENABLED="false"
 
@@ -146,6 +151,7 @@ ENV ENABLE_CONVERSIONS="true"
 ENV OVERLEAF_HISTORY_RESTORE="true"
 ENV OVERLEAF_ENABLE_REGISTRATION_PAGE="false"
 ENV SIBLING_CONTAINERS_ENABLED="false"
+# -- END NG --
 
 # Phusion Image timeouts before sending SIGKILL to processes
 # ----------------------------------------------------------
