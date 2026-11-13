@@ -132,7 +132,7 @@ ENV OVERLEAF_APP_NAME="Overleaf Community Edition"
 
 ENV OPTIMISE_PDF="true"
 
-ENV REQ_VALIDATION_MODE=enforce-log
+ENV REQ_VALIDATION_MODE="enforce-log"
 
 # Overleaf V6 NG specifics
 ENV OVERLEAF_CSP_ENABLED="false"
