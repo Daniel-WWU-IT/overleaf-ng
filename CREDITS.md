@@ -1,4 +1,8 @@
-# CREDITS
+# CREDITS - Overleaf V6 NG
+
+Overleaf V6 NG is based on the [Overleaf CEP](https://github.com/yu-i-i/overleaf-cep) (see below for their credits) and written and maintained by the [University of Muenster](https://www.uni-muenster.de).
+
+# CREDITS - Overleaf CEP
 
 This project includes ideas and adapted code from several open-source projects.\
 In most cases the original code has been modified, optimized, or extended.
