@@ -17,9 +17,6 @@ The goal is to keep merge conflicts as minimal and as easy to resolve as possibl
 
 **Note**: Unlike in our previous customized Overleaf V6 version, we no longer document how to apply our changes to a vanilla copy of Overleaf. This is due to the fact that this repository is a true, customized fork.
 
-## Running Overleaf as an integrated app
-To use Overleaf as an integrated app in a host system (like Nextcloud), you need to set the environment variable `OVERLEAF_INTEGRATION` to `true`. This will activate all changes that are necessary for Overleaf to run integrated into a host system.
-
 ## Local deployment
 The directory `/deployment/local` contains files to run a local deployment alongside a Nextcloud. The `Makefile` located in the project root directory can be used to build and run this deployment. Before using this, though, read the instructions in [`LOCAL_DEPLOYMENT.md`](deployment/local/LOCAL_DEPLOYMENT.md) carefully, as it will _not_ work out-of-the-box!
 

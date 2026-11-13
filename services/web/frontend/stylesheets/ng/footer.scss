@@ -1,0 +1,7 @@
+// Fix dark styling of the footer
+@include theme('default') {
+  footer.site-footer {
+    background-color: var(--bg-dark-primary);
+    border-top: 1px solid var(--bg-dark-primary);
+  }
+}

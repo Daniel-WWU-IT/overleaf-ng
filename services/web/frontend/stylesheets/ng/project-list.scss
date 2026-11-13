@@ -1,0 +1,8 @@
+// Fix the height of the main content to not hide the footer (this is due to the added header from the integration host)
+.project-ds-nav-page {
+  .project-list-wrapper {
+    .project-ds-nav-main {
+      min-height: calc(100vh - 7.5rem);
+    }
+  }
+}
