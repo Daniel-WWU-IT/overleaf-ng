@@ -11,6 +11,10 @@ import ThemeToggle from '@/features/project-list/components/sidebar/theme-toggle
 import { OfflineDocBackup } from '@/features/ide-react/editor/offline-doc-backup'
 import { ConnectionOutageTracker } from '@/features/ide-react/editor/connection-outage-tracker'
 
+// -- BEGIN NG --
+import { NGAccountMenuItems } from '@/shared/components/navbar/account-menu-items.ng'
+// -- END NG --
+
 export function AccountMenuItems({
   sessionUser,
   showSubscriptionLink,
@@ -24,6 +28,11 @@ export function AccountMenuItems({
   const logOutFormId = 'logOutForm'
   const dsNavStyle = useDsNavStyle()
   const hasOverallThemes = Boolean(getMeta('ol-overallThemes'))
+
+  // -- BEGIN NG --
+  // Use a stripped down account menu
+  return NGAccountMenuItems(sessionUser, showThemeToggle, hasOverallThemes)
+  // -- END NG --
 
   return (
     <>
