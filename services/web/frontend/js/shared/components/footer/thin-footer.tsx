@@ -8,10 +8,6 @@ import LanguagePicker from '@/shared/components/language-picker'
 import getMeta from '@/utils/meta.ts'
 import React from 'react'
 
-// -- BEGIN NG --
-import { ngThinFooterContent } from '@/shared/components/footer/thin-footer.ng'
-// -- END NG --
-
 function FooterItemLi({
   text,
   translatedText,
@@ -68,10 +64,6 @@ function ThinFooter({
 
   const hasCustomLeftNav = Boolean(leftItems && leftItems.length > 0)
 
-  // -- BEGIN NG --
-  return ngThinFooterContent()
-  // -- END NG --
-
   return (
     <footer className="site-footer">
       <div className="site-footer-content d-print-none">
@@ -111,4 +103,9 @@ function ThinFooter({
   )
 }
 
-export default ThinFooter
+// -- BEGIN NG --
+// export default ThinFooter
+
+import { NGThinFooter } from '@/shared/components/footer/thin-footer.ng'
+export default NGThinFooter
+// -- END NG --

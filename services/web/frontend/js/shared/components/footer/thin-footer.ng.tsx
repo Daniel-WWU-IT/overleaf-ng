@@ -1,7 +1,8 @@
 // -- BEGIN NG --
 import OLRow from "@/shared/components/ol/ol-row.tsx";
+import {type FooterMetadata} from "@/shared/components/types/footer-metadata.ts";
 
-export function ngThinFooterContent(): string {
+export function NGThinFooter(_: FooterMetadata) {
     return (
         <footer className="site-footer">
             <div className="site-footer-content d-print-none">
