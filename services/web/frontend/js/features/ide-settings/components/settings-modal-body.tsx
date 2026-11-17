@@ -4,6 +4,10 @@ import { Nav, NavLink, TabContainer, TabContent } from 'react-bootstrap'
 import { SettingsEntry } from '../context/types'
 import SettingsTabPane from './settings-tab-pane'
 
+// -- BEGIN NG --
+import {NGFilterIDESettingsTabs} from "@/features/ide-settings/components/settings-modal-body.ng.tsx";
+// -- END NG --
+
 export const SettingsModalBody = ({
   activeTab,
   setActiveTab,
@@ -13,6 +17,11 @@ export const SettingsModalBody = ({
   setActiveTab: (tab: string | null | undefined) => void
   settingsTabs: SettingsEntry[]
 }) => {
+  // -- BEGIN NG --
+  // Filter out a few unwanted IDE settings tabs
+  settingsTabs = NGFilterIDESettingsTabs(settingsTabs)
+  // -- END NG --
+
   return (
     <TabContainer
       transition={false}

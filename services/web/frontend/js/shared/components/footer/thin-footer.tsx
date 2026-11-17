@@ -106,6 +106,7 @@ function ThinFooter({
 // -- BEGIN NG --
 // export default ThinFooter
 
+// Replace the default footer by a slightly modified one
 import { NGThinFooter } from '@/shared/components/footer/thin-footer.ng'
 export default NGThinFooter
 // -- END NG --
