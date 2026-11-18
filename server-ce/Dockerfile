@@ -96,11 +96,6 @@ ADD server-ce/bin/grunt /usr/local/bin/grunt
 RUN chmod +x /usr/local/bin/grunt
 
 # -- BEGIN NG --
-# Copy UI proxy scripts and stylesheets
-# -------------------------------------
-COPY server-ce/runit/ui-proxy/js/*.js /overleaf/services/web/public/js/ui-proxy/
-COPY server-ce/runit/ui-proxy/css/*.css /overleaf/services/web/public/stylesheets/ui-proxy/
-
 # Copy the sandboxed compiler runner
 # ----------------------------------
 COPY sandboxed-compiler/compiler-runner/compiler_runner.py /usr/local/bin/latexmk

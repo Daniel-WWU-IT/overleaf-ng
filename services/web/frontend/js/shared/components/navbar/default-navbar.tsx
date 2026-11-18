@@ -166,4 +166,11 @@ export const DefaultNavbarRoot = (props: DefaultNavbarMetadata) => {
   return <DefaultNavbar {...props} />
 }
 
-export default DefaultNavbar
+// -- BEGIN NG --
+// export default DefaultNavbar
+
+// Use our own Navbar
+import { NGDefaultNavbar } from '@/shared/components/navbar/default-navbar.ng'
+export default NGDefaultNavbar
+// -- END NG --
+

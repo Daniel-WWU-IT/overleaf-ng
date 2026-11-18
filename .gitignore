@@ -46,3 +46,10 @@ lerna-debug.log*
 # Python virtual env
 venv
 .venv
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz
+.pnp.loader.mjs
+.pnp.cjs
