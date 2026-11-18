@@ -1,3 +1,26 @@
+// Navigation on the projects page
+.project-ds-nav-page {
+  .project-list-wrapper {
+    // Fix the height of the main content to not hide the footer (this is due to the added header from the integration host)
+    .project-ds-nav-main {
+      min-height: calc(100vh - 7.5rem);
+    }
+  }
+
+  // Hide app name tag
+  .ds-nav-ds-name {
+    display: none;
+  }
+}
+
+// Navigation on the users page
+.user-ds-nav-page {
+  // Hide app name tag
+  .ds-nav-ds-name {
+    display: none;
+  }
+}
+
 // Welcome page (make it always dark, as it is not themed correctly)
 body:has(div.welcome) {
   .navbar-default, .navbar-light {
