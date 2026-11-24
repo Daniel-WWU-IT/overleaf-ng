@@ -1,0 +1,10 @@
+// Remove the red gradient from the admin pages
+.red-nav-bar-for-admins {
+  .navbar-default {
+    background: var(--navbar-bg) !important;
+  }
+
+  .ide-redesign-toolbar {
+    --redesign-toolbar-background: var(--navbar-bg) !important;
+  }
+}
