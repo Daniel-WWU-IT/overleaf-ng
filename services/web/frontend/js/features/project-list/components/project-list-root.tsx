@@ -95,6 +95,9 @@ function ProjectListPageContent() {
     return loadingComponent
   }
 
+  //-- BEGIN NG --
+  // Remove the Welcome page
+  /*
   if (totalProjectsCount === 0) {
     return (
       <>
@@ -105,6 +108,8 @@ function ProjectListPageContent() {
       </>
     )
   }
+  */
+  // -- END NG --
   return (
     <DsNavStyleProvider>
       <ProjectListDsNav />
