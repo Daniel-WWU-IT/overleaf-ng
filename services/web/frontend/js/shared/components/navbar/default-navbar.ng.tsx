@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button, Container, Nav, Navbar } from 'react-bootstrap'
-import AdminMenu from '@/shared/components/navbar/admin-menu'
+import AdminMenu from '@/shared/components/navbar/admin-menu.ng'
 import type { DefaultNavbarMetadata } from '@/shared/components/types/default-navbar-metadata'
 import HeaderLogoOrTitle from '@/shared/components/navbar/header-logo-or-title'
 import overleafWhiteLogo from '@/shared/svgs/overleaf-white.svg'
