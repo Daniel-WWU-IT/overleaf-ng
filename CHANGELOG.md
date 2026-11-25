@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Based the project on [Overleaf CEP](https://github.com/yu-i-i/overleaf-cep)
+- Removed the UI proxy and applied all its dynamic changes directly to the sources
 
 ## V2.3.0 - 2026-10-30
 

@@ -7,3 +7,6 @@ Furthermore, all files necessary for the local deployment can be found in `/depl
 
 ## Sandboxed compiler
 We use our own sandboxed compiler system, which can be found in `/sandboxed-compiler`.
+
+## Removed features
+Some features, like user account settings, are removed since they are not needed for the integrated version of Overleaf.
